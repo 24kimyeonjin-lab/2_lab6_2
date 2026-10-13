@@ -69,6 +69,7 @@ namespace KimYeonjin2693058
                 case 12: std::cout << "Dec. "; break;
             }std:: cout << day << "\n";
         }
+        
         friend std::ostream& operator<<(std::ostream& os, const dayOfYear& d)
         {//input: std::cin --> is, d.month, d.day, reutrn is;
          //print: std::cout --> os, d.month, d.day, return os;

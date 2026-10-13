@@ -13,7 +13,7 @@ namespace KimYeonjin2693058
     public:
         holiday(const std::string& n = "no name yet",
             dayOfYear d = dayOfYear{1,1}, bool p = false)
-            : name{n}, date{ d }, parkingEnforcement{p}
+            : name{n}, date{d}, parkingEnforcement{p}
         {}
        
         void print() const //holiday::print()
@@ -26,22 +26,22 @@ namespace KimYeonjin2693058
                 std::cout << "Parking laws will NOT be enforced.\n";
         }
 
-         friend std::ostream& operator >>(std::ostream& os, holiday& d)
+         friend std::ostream& operator<<(std::ostream& os, const holiday& h)
          {
             os << h.name <<": ";
             os << h.date;//dayOfYear의 operator
             if(h.parkingEnforcement)
-                os <, "Parking laws will be enforced. \n";
+                os << "Parking laws will be enforced. \n";
             else
                 os << "Parking laws will NOT be enforced.\n";
             return os;
          }
 
-         friend std::istream& operator >>(std::istream& is, holiday& d)
+         friend std::istream& operator>>(std::istream& is, holiday& h)
          {
-            std::cout <, "Enter holdiay name: ";
+            std::cout << "Enter holdiay name: ";
             std::getline(is >> std::ws, h.name);
-            is >> date; //dayOfYear operator>>
+            is >> h.date; //dayOfYear operator>>
             std::cout << "Enter parking law enfocement: 1(true) or 0(false): ";
             is >> h.parkingEnforcement;
             return is;
@@ -51,16 +51,15 @@ namespace KimYeonjin2693058
         {
             std::cout << "Enter holiday name: ";
             std::getline(std::cin >> std::ws, name);//std::cin >> name;
-            date.input();
+            date.input();//date.month, date.day
             std::cout << "Enter parking law enforcement: 1(true) or 0(false)";
             std::cin >> parkingEnforcement;
         }
-        const std:;string& getname() const {return name;}
-        void setName(const std:;string& n) {name = n;}
+        const std::string& getName() const {return name;}
         const dayOfYear& getDate() const { return date; }
+        void setName(const std::string& n) {name = n;}
         void setDate(const dayOfYear& d) { date = d; }
         void setParkingEnforcement(bool p){parkingEnforcement = p;}
-
         
     };
 }

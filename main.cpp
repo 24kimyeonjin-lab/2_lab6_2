@@ -24,7 +24,7 @@ int main()
 
     std::array<holdiay, n> arr;
     for (int i = 0; i < arr.size(); ++i)
-        arr.at(i) = a[i];//arr[i] = a[i];
+        arr.auto(i) = a[i];//arr[i] = a[i];
     for (const auto& arri : arr)
         arri.print();
 

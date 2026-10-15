@@ -23,9 +23,9 @@ int main()
     std::cin >> std::ws >> a[3];
     printHolidayArray(a,n);
 
-    std::array<holdiay, n> arr{};
+    std::array<holiday, n> arr{};
     for (int i = 0; i < arr.size(); ++i)
-        arr.auto(i) = a[i];//arr[i] = a[i];
+        arr.at(i) = a[i];//arr[i] = a[i];
     for (const auto& arri : arr)
         arri.print();
 

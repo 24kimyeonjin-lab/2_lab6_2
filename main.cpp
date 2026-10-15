@@ -1,4 +1,5 @@
 #include "holiday.h"
+
 #include <array>
 
 namespace KimYeonjin2693058
@@ -22,7 +23,7 @@ int main()
     std::cin >> std::ws >> a[3];
     printHolidayArray(a,n);
 
-    std::array<holdiay, n> arr;
+    std::array<holdiay, n> arr{};
     for (int i = 0; i < arr.size(); ++i)
         arr.auto(i) = a[i];//arr[i] = a[i];
     for (const auto& arri : arr)

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "dayOfYear.h"
 #include <string>
 
